@@ -11,7 +11,15 @@ import SwiftUI
 struct fiveletterApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainMenu()
         }
+    }
+    
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+
+        // initialize Amplify
+        let _ = Backend.initialize()
+
+        return true
     }
 }
